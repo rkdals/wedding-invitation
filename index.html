@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="data:image/png;base64,">
     <title>강민 ♥ 백소연 결혼합니다</title>
     <script src="https://unpkg.com/@supabase/supabase-js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6dd95fdc88f7a7ddde78370842026602"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -43,16 +44,24 @@
       백여현 · 현영미 <span class="relation">의 딸</span> 소연
     </div>
 
+    <div class="subtitle">갤러리</div>
+
+    <div class="grid">
+	<img src="placeholder.svg" />
+	<img src="placeholder.svg" />
+	<img src="placeholder.svg" />
+	<img src="placeholder.svg" />
+    </div>
     <a href="gallery.html">
-      <div class="grid">
-	  <img src="placeholder.svg" />
-	  <img src="placeholder.svg" />
-	  <img src="placeholder.svg" />
-	  <img src="placeholder.svg" />
-      </div>
+      <div class="button">더 보기</div>
     </a>
 
     <div class="subtitle">오시는 길</div>
+
+    <div id="map"></div>
+    <a href="https://map.kakao.com/?itemId=18661190">
+      <div class="button">카카오맵 바로가기</div>
+    </a>
 
     <div class="location-info">
       <div>
@@ -78,6 +87,8 @@
       전석 지정좌석제로 진행되오니<br/>
       참석 여부를 미리 알려주시면 감사하겠습니다.
     </div>
+
+    <div class="subtitle">마음 전하실 곳</div>
 
     <div>
       <div>
@@ -125,6 +136,10 @@
 
   </body>
   <script>
+    var map = new kakao.maps.Map(document.getElementById('map'), {
+        center: new kakao.maps.LatLng(37.539490, 126.997375),
+        level: 4
+    });
     renderGuestbook(getDataRecent);
     document.getElementById('submit-form-button').addEventListener('click', () => {
       submitForm();
