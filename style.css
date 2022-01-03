@@ -34,10 +34,12 @@ a {
   font-size: 18px;
   padding: 48px 0 16px;
 }
-.banner {
+.banner, .entry {
   background: #fff;
   border: 8px solid #fff;
   box-shadow: 1px 1px 3px rgb(0 0 0 / 7%);
+}
+.banner {
   margin: 0 14px;
 }
 .banner-text, .family-members {
@@ -55,7 +57,7 @@ a {
   grid-gap: 4px;
   padding: 4px;
 }
-.location-info {
+.location-info, .entry {
   text-align: left;
   line-height: 24px;
 }
@@ -79,6 +81,26 @@ a {
   padding: 4px 20px;
 }
 #map {
-  height: 350px;
+  height: 300px;
   width: 100%;
+}
+.entry {
+  font-size: 12px;
+  margin: 0 48px 16px;
+}
+.row {
+  position: absolute;
+}
+.delete-icon {
+  cursor: pointer;
+  display: inline-block;
+  height: 12px;
+}
+.name {
+  font-size: 15px;
+  text-align: left;
+}
+.date {
+}
+.message {
 }

@@ -8,6 +8,17 @@ var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
 
 const insertData = async data => await supabase.from(TABLE_ID).insert([data]);
 
+const deleteData = async (id, passwd) => {
+  const {data} = await supabase.from(TABLE_ID).select('id, passwd').match({id});
+  if (passwd === data[0].passwd) {
+    await supabase.from(TABLE_ID).delete().match({id});
+    alert('deleted');
+    location.reload();
+  } else {
+    alert('wrong pw');
+  }
+}
+
 const submitForm = async () => {
   const getValueById = id => document.getElementById(id).value;
   await insertData({
@@ -33,11 +44,21 @@ const renderGuestbook = async fetchData => {
   }
   const guestbook = document.getElementById('guestbook');
   for (let {id, created_at, name, message} of (await fetchData()).data) {
-    // TODO: Attach onclick listener to delete after matching password.
-    const div = createDivWithText(message);
-    div.appendChild(createDivWithText(name));
-    div.appendChild(createDivWithText(created_at));
-    guestbook.appendChild(div);
+    const date = new Date(created_at).toLocaleString('ko-KR');
+    const func = `(async () => {
+      const input = window.prompt('enter pw');
+      await deleteData('${id}', input);
+    })();`
+    guestbook.insertAdjacentHTML('beforeend', 
+      `<div class="entry">
+	 <div class="name">${name}</div>
+         <div class="row">
+	   <div class="date">${date}</div>
+	   <img class="delete-icon" src="delete_black_24dp.svg" onclick="${func}">
+	 </div>
+         <div class="message">${message}</div>
+       <div>`
+    );
   }
 }
 
