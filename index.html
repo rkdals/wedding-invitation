@@ -108,14 +108,26 @@
 
     <div class="subtitle">방명록</div>
 
+
     <div id="guestbook"></div>
 
     <a href="guestbook.html">
-      <div id="back-button" class="button">더 보기</div>
+      <div class="button">더 보기</div>
     </a>
+
+    <div class="form">
+      <div>Name: <input id="name" type="text"></div>
+      <div>Password: <input id="passwd" type="password"></div>
+      <div>Message: <input id="message" type="text"></div>
+    <div>
+
+    <div id="submit-form-button" class="button">축하메시지 남기기</div>
 
   </body>
   <script>
     renderGuestbook(getDataRecent);
+    document.getElementById('submit-form-button').addEventListener('click', () => {
+      submitForm();
+    });
   </script>
 </html>

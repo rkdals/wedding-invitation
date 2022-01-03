@@ -8,6 +8,17 @@ var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
 
 const insertData = async data => await supabase.from(TABLE_ID).insert([data]);
 
+const submitForm = async () => {
+  const getValueById = id => document.getElementById(id).value;
+  await insertData({
+    name: getValueById('name'),
+    passwd: getValueById('passwd'),
+    message: getValueById('message'),
+  });
+  alert('submitted');
+  location.reload();
+}
+
 const getDataRecent = async () =>
   await supabase.from(TABLE_ID).select()
     .order('created_at', {ascending: false}).limit(MAX_RECENT_COMMENTS);
@@ -21,11 +32,12 @@ const renderGuestbook = async fetchData => {
     return div;
   }
   const guestbook = document.getElementById('guestbook');
-  for (let {id, created_at, name, text} of (await fetchData()).data) {
+  for (let {id, created_at, name, message} of (await fetchData()).data) {
     // TODO: Attach onclick listener to delete after matching password.
-    const div = createDivWithText(text);
+    const div = createDivWithText(message);
     div.appendChild(createDivWithText(name));
     div.appendChild(createDivWithText(created_at));
     guestbook.appendChild(div);
   }
 }
+
