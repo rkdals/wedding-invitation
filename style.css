@@ -17,7 +17,7 @@ body {
   width: 100%;
 }
 img {
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 a {
@@ -56,6 +56,10 @@ a {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4px;
   padding: 4px;
+}
+.grid img {
+  height: 200px;
+  object-fit: cover;
 }
 .location-info, .entry {
   text-align: left;
