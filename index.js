@@ -14,7 +14,7 @@ const deleteData = async (id, passwd) => {
     await supabase.from(TABLE_ID).delete().match({id});
     alert('deleted');
     location.reload();
-  } else {
+  } else if (passwd !== '') {
     alert('wrong pw');
   }
 }
@@ -43,22 +43,24 @@ const renderGuestbook = async fetchData => {
     return div;
   }
   const guestbook = document.getElementById('guestbook');
+  let idx = 0;
   for (let {id, created_at, name, message} of (await fetchData()).data) {
     const date = new Date(created_at).toLocaleString('ko-KR');
-    const func = `(async () => {
-      const input = window.prompt('enter pw');
-      await deleteData('${id}', input);
-    })();`
     guestbook.insertAdjacentHTML('beforeend', 
       `<div class="entry">
-	 <div class="name">${name}</div>
          <div class="row">
-	   <div class="date">${date}</div>
-	   <img class="delete-icon" src="delete_black_24dp.svg" onclick="${func}">
+	   <span class="name">${name}</span>
+	   <span class="date">${date}</span>
 	 </div>
          <div class="message">${message}</div>
+	 <span class="delete" id="delete-${idx}">삭제</span>
        <div>`
     );
+    document.getElementById(`delete-${idx}`).addEventListener('click', async () => {
+      const input = window.prompt('enter pw');
+      await deleteData(id, input);
+    });
+    idx++;
   }
 }
 

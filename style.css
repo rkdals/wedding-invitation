@@ -59,6 +59,8 @@ a {
 }
 .location-info, .entry {
   text-align: left;
+}
+.location-info {
   line-height: 24px;
 }
 .location-subtitle {
@@ -85,22 +87,30 @@ a {
   width: 100%;
 }
 .entry {
+  border-bottom: 0;
+  border-radius: 8px;
   font-size: 12px;
   margin: 0 48px 16px;
+  position: relative;
 }
 .row {
-  position: absolute;
-}
-.delete-icon {
-  cursor: pointer;
-  display: inline-block;
-  height: 12px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 20px;
+  margin-bottom: 8px;
 }
 .name {
   font-size: 15px;
   text-align: left;
 }
-.date {
+.date, .delete {
+  color: #aaa;
+  font-size: 11px;
+}
+.delete {
+  cursor: pointer;
 }
 .message {
+  line-height: 14px;
+  white-space: pre-wrap;
 }
