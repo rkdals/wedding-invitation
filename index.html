@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta property="og:image" content="images/sub_img.jpg">
     <link rel="icon" type="image/png" href="data:image/png;base64,">
     <title>강민 ♥ 백소연 결혼합니다</title>
@@ -22,8 +22,8 @@
     <div class="banner">
       <img src="images/main_img.jpg" />
       <div class="banner-text">
-	2022년 2월 26일 토요일 낮 12시<br/>
-	그랜드 하얏트 서울 그랜드 볼룸
+        2022년 2월 26일 토요일 낮 12시<br/>
+        그랜드 하얏트 서울 그랜드 볼룸
       </div>
     </div>
 
@@ -47,18 +47,18 @@
     <div class="subtitle">갤러리</div>
 
     <div class="grid">
-	<img src="images/1_1.jpg" />
-	<img src="images/1_2.jpg" />
-	<img src="images/1_3.jpg" />
-	<img src="images/2_1.jpg" />
-	<img src="images/2_2.jpg" />
-	<img src="images/2_3.jpg" />
-	<img src="images/3_1.jpg" />
-	<img src="images/3_2.jpg" />
-	<img src="images/3_3.jpg" />
+      <img src="images/1_1.jpg" />
+      <img src="images/1_2.jpg" />
+      <img src="images/1_3.jpg" />
+      <img src="images/2_1.jpg" />
+      <img src="images/2_2.jpg" />
+      <img src="images/2_3.jpg" />
+      <img src="images/3_1.jpg" />
+      <img src="images/3_2.jpg" />
+      <img src="images/3_3.jpg" />
     </div>
     <a href="gallery.html">
-      <div class="button">더 보기</div>
+      <div class="button">자세히 보기</div>
     </a>
 
     <div class="subtitle">오시는 길</div>
@@ -70,21 +70,21 @@
 
     <div class="location-info">
       <div>
-	<div class="location-subtitle">주소</div>
-	서울특별시 용산구 소월로 322<br/>
+        <div class="location-subtitle">주소</div>
+        서울특별시 용산구 소월로 322<br/>
       </div>
       <div>
-	<div class="location-subtitle">셔틀버스</div>
-	6호선 한강진역 2번 출구에서 탑승<br/>
-	11시부터 12시까지 운행 (15분 간격)
+        <div class="location-subtitle">셔틀버스</div>
+        6호선 한강진역 2번 출구에서 탑승<br/>
+        11시부터 12시까지 운행 (15분 간격)
       </div>
       <div>
-	<div class="location-subtitle">일반 버스</div>
-	402, 405번 버스 하얏트 호텔 정류장 하차
+        <div class="location-subtitle">일반 버스</div>
+        402, 405번 버스 하얏트 호텔 정류장 하차
       </div>
       <div>
-	<div class="location-subtitle">자가용</div>
-	호텔 주차장 3시간 무료 이용 가능
+        <div class="location-subtitle">자가용</div>
+        호텔 주차장 3시간 무료 이용 가능
       </div>
     </div>
 
@@ -97,53 +97,59 @@
 
     <div>
       <div>
-	신랑측 계좌번호
-	<div>
-	  신한은행 110-123-456789 강민
-	  <a href="https://qr.kakaopay.com/FC31YBBXc">
-	    <img class="kakaopay" src="payment_icon_yellow_large.png" />
-	  </a>
-	</div>
-	<div>
-	  신한은행 110-123-456789 강성우
-	</div>
+        신랑측 계좌번호
+        <div>
+          신한은행 110-123-456789 강민
+          <a href="https://qr.kakaopay.com/FC31YBBXc">
+            <img class="kakaopay" src="payment_icon_yellow_large.png" />
+          </a>
+        </div>
+        <div>
+          신한은행 110-123-456789 강성우
+        </div>
       </div>
       <div>
-	신부측 계좌번호
-	<div>
-	  신한은행 110-123-456789 백소연
-	  <a href="https://qr.kakaopay.com/Ej8jMwt1V">
-	    <img class="kakaopay" src="payment_icon_yellow_large.png" />
-	  </a>
-	</div>
-	<div>
-	  신한은행 110-123-456789 백여현
-	</div>
+        신부측 계좌번호
+        <div>
+          신한은행 110-123-456789 백소연
+          <a href="https://qr.kakaopay.com/Ej8jMwt1V">
+            <img class="kakaopay" src="payment_icon_yellow_large.png" />
+          </a>
+        </div>
+        <div>
+          신한은행 110-123-456789 백여현
+        </div>
       </div>
     </div>
 
     <div class="subtitle">방명록</div>
 
 
+
+    <div class="form">
+      <input id="name" type="text" maxlength="32" placeholder="이름">
+      <input id="passwd" type="password" maxlength="32" placeholder="비밀번호">
+      <textarea id="message" maxlength="300"></textarea>
+    </div>
+    <div id="submit-form-button" class="button">축하메시지 남기기</div>
+
+
     <div id="guestbook"></div>
 
     <a href="guestbook.html">
-      <div class="button">자세히 보기</div>
+      <div id="guestbook-button" class="button">더 보기</div>
     </a>
-
-    <div class="form">
-      <div>Name: <input id="name" type="text"></div>
-      <div>Password: <input id="passwd" type="password"></div>
-      <div>Message: <textarea id="message" type="text"></textarea></div>
-    <div>
-
-    <div id="submit-form-button" class="button">축하메시지 남기기</div>
 
   </body>
   <script>
     var map = new kakao.maps.Map(document.getElementById('map'), {
-        center: new kakao.maps.LatLng(37.539490, 126.997375),
-        level: 4
+      center: new kakao.maps.LatLng(37.539490, 126.997375),
+      level: 4
+    });
+    getCount().then(({count}) => {
+      if (count <= MAX_RECENT_COMMENTS) {
+        document.getElementById('guestbook-button').style.display = 'none';
+      }
     });
     renderGuestbook(getDataRecent);
     document.getElementById('submit-form-button').addEventListener('click', () => {

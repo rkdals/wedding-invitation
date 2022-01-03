@@ -4,15 +4,15 @@
   src: url('SunBatang-Light.otf');
 }
 html {
-  background: #333;
+  background-color: #333;
 }
 body {
-  background: #f5f1ee;
+  background-color: #f5f1ee;
   font: 14px/32px SunBatang;
   height: 100%;
   margin: auto;
-  max-width: 420px;
-  padding: 0;
+  max-width: 540px;
+  padding-bottom: 24px;
   text-align: center;
   width: 100%;
 }
@@ -22,6 +22,9 @@ img {
 }
 a {
   text-decoration: none;
+}
+input::placeholder {
+  font-family: SunBatang;
 }
 .title, .subtitle, .location-subtitle {
   color: #bf8362;
@@ -35,7 +38,7 @@ a {
   padding: 48px 0 16px;
 }
 .banner, .entry {
-  background: #fff;
+  background-color: #fff;
   border: 8px solid #fff;
   box-shadow: 1px 1px 3px rgb(0 0 0 / 7%);
 }
@@ -49,7 +52,10 @@ a {
   padding: 20px 0;
 }
 .greetings-text, .family-members, .location-info {
-  margin: 16px 32px 48px;
+  margin: 16px 32px 0;
+}
+.greetings-text {
+  margin-bottom: 48px;
 }
 .grid {
   display: grid;
@@ -66,6 +72,7 @@ a {
 }
 .location-info {
   line-height: 24px;
+  margin-bottom: 24px;
 }
 .location-subtitle {
   font-size: 16px;
@@ -93,7 +100,7 @@ a {
 .entry {
   border-bottom: 0;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 13px;
   margin: 0 48px 16px;
   position: relative;
 }
@@ -117,4 +124,43 @@ a {
 .message {
   line-height: 14px;
   white-space: pre-wrap;
+}
+.form, #submit-form-button, #guestbook-button {
+  margin: 0 48px 0;
+}
+.form {
+  background-color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: grid;
+  grid-gap: 8px;
+  grid-template-areas: "name passwd"
+                       "message message";
+  padding: 8px;
+}
+#name, #passwd, #message {
+  font-size: 14px;
+  height: 24px;
+  padding: 0;
+  width: 100%;
+}
+#name {
+  grid-area: name;
+}
+#passwd {
+  grid-area: passwd;
+}
+#message {
+  grid-area: message;
+  height: 48px;
+}
+#guestbook {
+  margin-top: 16px;
+}
+#submit-form-button {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+#guestbook-button {
+  border-radius: 8px;
 }
