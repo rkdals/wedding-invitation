@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="placeholder.svg">
+    <link rel="icon" type="image/png" href="data:image/png;base64,">
+    <title>강민 ♥ 백소연 결혼합니다</title>
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="title">
+      강민<br/>
+      —<br/>
+      백소연
+    </div>
+
+    <div class="banner">
+      <img src="placeholder.svg" />
+      <div class="banner-text">
+	2022년 2월 26일 토요일 낮 12시<br/>
+	그랜드 하얏트 서울 그랜드 볼룸
+      </div>
+    </div>
+
+    <div class="subtitle">초대합니다</div>
+
+    <div class="greetings-text">
+      서로가 있기에 눈 뜨는 아침이 행복했습니다.<br/>
+      이제 그 행복을 곁에서 함께 하려 합니다.<br/>
+      사랑과 믿음으로 하나 되는 자리에<br/>
+      귀한 걸음 하시어 축복해 주시면<br/>
+      큰 기쁨으로 간직하겠습니다.
+    </div>
+
+    <img src="placeholder.svg" />
+
+    <div class="family-members">
+      강성우 · 김경진 <span class="relation">의 아들</span> 민<br/>
+      백여현 · 현영미 <span class="relation">의 딸</span> 소연
+    </div>
+
+    <a href="gallery.html">
+      <div class="grid">
+	  <img src="placeholder.svg" />
+	  <img src="placeholder.svg" />
+	  <img src="placeholder.svg" />
+	  <img src="placeholder.svg" />
+      </div>
+    </a>
+
+    <div class="subtitle">오시는 길</div>
+
+    <div class="location-info">
+      <div>
+	<div class="location-subtitle">주소</div>
+	서울특별시 용산구 소월로 322<br/>
+      </div>
+      <div>
+	<div class="location-subtitle">셔틀버스</div>
+	6호선 한강진역 2번 출구에서 탑승<br/>
+	11시부터 12시까지 운행 (15분 간격)
+      </div>
+      <div>
+	<div class="location-subtitle">일반 버스</div>
+	402, 405번 버스 하얏트 호텔 정류장 하차
+      </div>
+      <div>
+	<div class="location-subtitle">자가용</div>
+	호텔 주차장 3시간 무료 이용 가능
+      </div>
+    </div>
+
+    <div class="banner">
+      전석 지정좌석제로 진행되오니<br/>
+      참석 여부를 미리 알려주시면 감사하겠습니다.
+    </div>
+
+    <div>
+      <div>
+	신랑측 계좌번호
+	<div>
+	  신한은행 110-123-456789 강민
+	  <a href="https://qr.kakaopay.com/FC31YBBXc">
+	    <img class="kakaopay" src="payment_icon_yellow_large.png" />
+	  </a>
+	</div>
+	<div>
+	  신한은행 110-123-456789 강성우
+	</div>
+      </div>
+      <div>
+	신부측 계좌번호
+	<div>
+	  신한은행 110-123-456789 백소연
+	  <a href="https://qr.kakaopay.com/Ej8jMwt1V">
+	    <img class="kakaopay" src="payment_icon_yellow_large.png" />
+	  </a>
+	</div>
+	<div>
+	  신한은행 110-123-456789 백여현
+	</div>
+      </div>
+    </div>
+
+    <div class="subtitle">방명록</div>
+
+    <div id="guestbook"></div>
+
+    <a href="guestbook.html">
+      <div id="back-button" class="button">더 보기</div>
+    </a>
+
+  </body>
+  <script>
+    renderGuestbook(getDataRecent);
+  </script>
+</html>

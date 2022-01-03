@@ -1,0 +1,80 @@
+@font-face{
+  font-family: "SunBatang";
+  font-weight: normal;
+  src: url('SunBatang-Light.otf');
+}
+html {
+  background: #333;
+}
+body {
+  background: #f5f1ee;
+  font-family: SunBatang;
+  font-size: 0.9rem;
+  height: 100%;
+  line-height: 2rem;
+  margin: auto;
+  max-width: 420px;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+.title, .subtitle, .location-subtitle {
+  color: #bf8362;
+  line-height: 1.6rem;
+}
+.title {
+  font-size: 1.2rem;
+  padding: 2.7rem 1rem 2rem;
+}
+.subtitle {
+  font-size: 1.1rem;
+  padding: 0 1rem 1rem;
+}
+.banner {
+  background: #fff;
+  border: 8px solid #fff;
+  margin: 0 14px;
+}
+.banner-text, .family-members {
+  font-size: 16px;
+}
+.banner-text {
+  padding: 1.2rem 0;
+}
+.greetings-text, .location-info {
+  margin: 2rem 1rem 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 4px;
+  padding: 4px;
+}
+.location-info {
+  text-align: left;
+}
+.kakaopay {
+  height: 17px;
+  vertical-align: text-top;
+  width: auto;
+}
+.family-members {
+  margin: 1rem 1rem 2rem;
+}
+.family-members .relation {
+  color: #8a857f;
+  font-size: 0.8rem;
+}
+.button {
+  background-color: #dab396;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px 20px;
+}
