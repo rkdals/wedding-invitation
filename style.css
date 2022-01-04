@@ -23,8 +23,10 @@ img {
 a {
   text-decoration: none;
 }
-input::placeholder {
+input::placeholder, textarea::placeholder {
   font-family: SunBatang;
+  line-height: 28px;
+  vertical-align: text-bottom;
 }
 .title, .subtitle, .location-subtitle {
   color: #bf8362;
@@ -132,27 +134,19 @@ input::placeholder {
   background-color: #fff;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  display: grid;
-  grid-gap: 8px;
-  grid-template-areas: "name passwd"
-                       "message message";
   padding: 8px;
+  position: relative;
 }
 #name, #passwd, #message {
+  border-width: 0;
   font-size: 14px;
-  height: 24px;
+  height: 28px;
   padding: 0;
   width: 100%;
 }
-#name {
-  grid-area: name;
-}
-#passwd {
-  grid-area: passwd;
-}
 #message {
-  grid-area: message;
-  height: 48px;
+  resize: none;
+  height: 42px;
 }
 #guestbook {
   margin-top: 16px;
@@ -163,4 +157,9 @@ input::placeholder {
 }
 #guestbook-button {
   border-radius: 8px;
+}
+.divider {
+  background-color: #aaa;
+  height: 1px;
+  width: 100%;
 }
