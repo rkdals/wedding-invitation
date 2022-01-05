@@ -90,36 +90,48 @@
 
     <div class="banner">
       전석 지정좌석제로 진행되오니<br/>
-      참석 여부를 미리 알려주시면 감사하겠습니다.
+      참석 여부를 미리 알려주시면 감사하겠습니다.<br/>
+
+      <br/>
+      축하의 마음만으로도 저희에게는 큰 기쁨이오니<br/>
+      결혼식 참석에 대한 부담은 갖지 않으셨으면 합니다.
     </div>
 
-    <div class="subtitle">마음 전하실 곳</div>
 
-    <div>
-      <div>
-        신랑측 계좌번호
-        <div>
-          신한은행 110-123-456789 강민
-          <a href="https://qr.kakaopay.com/FC31YBBXc">
-            <img class="kakaopay" src="payment_icon_yellow_large.png" />
-          </a>
-        </div>
-        <div>
-          신한은행 110-123-456789 강성우
-        </div>
-      </div>
-      <div>
-        신부측 계좌번호
-        <div>
-          신한은행 110-123-456789 백소연
-          <a href="https://qr.kakaopay.com/Ej8jMwt1V">
-            <img class="kakaopay" src="payment_icon_yellow_large.png" />
-          </a>
-        </div>
-        <div>
-          신한은행 110-123-456789 백여현
-        </div>
-      </div>
+    <div class="subtitle">
+      마음 전하실 곳
+    </div>
+
+    <div name="accounts" class="button account-button">
+      신랑측 계좌번호
+    </div>
+    <div class="account-item">
+      <p>신한은행 110-123-456789 강민
+        <a href="https://qr.kakaopay.com/FC31YBBXc">
+          <img class="kakaopay" src="payment_icon_yellow_large.png" />
+        </a>
+      </p>
+      <p>신한은행 110-123-456789 강성우
+        <!-- <a href="https://qr.kakaopay.com/blah">
+          <img class="kakaopay" src="payment_icon_yellow_large.png" />
+        </a> -->
+      </p>
+    </div>
+
+    <div name="accounts" class="button account-button">
+      신부측 계좌번호
+    </div>
+    <div class="account-item">
+      <p>신한은행 110-123-456789 백소연
+        <a href="https://qr.kakaopay.com/Ej8jMwt1V">
+          <img class="kakaopay" src="payment_icon_yellow_large.png" />
+        </a>
+      </p>
+      <p>신한은행 110-123-456789 백여현
+        <!-- <a href="https://qr.kakaopay.com/blah">
+          <img class="kakaopay" src="payment_icon_yellow_large.png" />
+        </a> -->
+      </p>
     </div>
 
     <div class="subtitle">방명록</div>
@@ -157,5 +169,19 @@
     document.getElementById('submit-form-button').addEventListener('click', () => {
       submitForm();
     });
+
+    var coll = document.getElementsByName('accounts');
+    var i;
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
   </script>
 </html>
