@@ -163,3 +163,24 @@ input::placeholder, textarea::placeholder {
   height: 1px;
   width: 100%;
 }
+.account-button {
+  margin: 8px 68px 0;
+}
+.account-button:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.account-item {
+  margin: 0 68px 0;
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #ffffff;
+}
+.active:after {
+  content: "\2212";
+}
