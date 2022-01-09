@@ -1,7 +1,7 @@
 @font-face{
   font-family: "SunBatang";
   font-weight: normal;
-  src: url('SunBatang-Light.otf');
+  src: url('SunBatang-Light.woff');
 }
 html {
   background-color: #333;
