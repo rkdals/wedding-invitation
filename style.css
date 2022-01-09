@@ -65,6 +65,9 @@ input::placeholder, textarea::placeholder {
   grid-gap: 4px;
   padding: 4px;
 }
+.grid a {
+  height: 200px;
+}
 .grid img {
   height: 200px;
   object-fit: cover;
