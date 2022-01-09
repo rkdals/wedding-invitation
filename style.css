@@ -93,7 +93,7 @@ input::placeholder, textarea::placeholder {
   color: #8a857f;
   font-size: 12px;
 }
-.button {
+.button, .mini-button {
   background-color: #dab396;
   color: #fff;
   cursor: pointer;
@@ -188,4 +188,7 @@ input::placeholder, textarea::placeholder {
 }
 .word {
   white-space: nowrap;
+}
+.mini-button {
+  margin: 3px 10px 3px;
 }
