@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="data:image/png;base64,">
   <title>강민 ♥ 백소연 결혼합니다</title>
   <script src="https://unpkg.com/@supabase/supabase-js"></script>
-  <script src="index.js"></script>
+  <script src="common.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
   <body>
@@ -21,10 +21,6 @@
     <div id="back-button" class="button">뒤로가기</div>
 
   </body>
-  <script>
-    renderGuestbook(getDataAll);
-    document.getElementById('back-button').addEventListener('click', () => {
-      history.back();
-    });
-  </script>
+  <script>renderGuestbook(getDataAll);</script>
+  <script src="back-button.js"></script>
 </html>

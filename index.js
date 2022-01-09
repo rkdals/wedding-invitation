@@ -1,72 +1,27 @@
-const SUPABASE_URL = 'https://bbruhsackdgiwtoxnkhz.supabase.co'
-const SUPABASE_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MTE5NzU3MCwiZXhwIjoxOTU2NzczNTcwfQ.3yqcxMFv0pBfyFUiLbH2CDGK5KDKI5nAnpCUPUyU8aE'
-const TABLE_ID = 'comments';
-const MAX_RECENT_COMMENTS = 3;
-
-var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
-
-const insertData = async data => await supabase.from(TABLE_ID).insert([data]);
-
-const deleteData = async (id, passwd) => {
-  const {data} = await supabase.from(TABLE_ID).select('id, passwd').match({id});
-  if (passwd === data[0].passwd) {
-    await supabase.from(TABLE_ID).delete().match({id});
-    alert('삭제되었습니다.');
-    location.reload();
-  } else if (passwd !== null) {
-    alert('비밀번호가 일치하지 않습니다.');
+var map = new kakao.maps.Map(document.getElementById('map'), {
+  center: new kakao.maps.LatLng(37.539490, 126.997375),
+  level: 4
+});
+getCount().then(({count}) => {
+  if (count <= MAX_RECENT_COMMENTS) {
+    document.getElementById('guestbook-button').style.display = 'none';
   }
-}
+});
+renderGuestbook(getDataRecent);
+document.getElementById('submit-form-button').addEventListener('click', () => {
+  submitForm();
+});
 
-const submitForm = async () => {
-  const getValueById = id => document.getElementById(id).value;
-  const name = getValueById('name');
-  if (name === '') {
-    alert('이름을 입력해주세요.');
-    return;
-  }
-  const passwd = getValueById('passwd');
-  if (passwd === '') {
-    alert('비밀번호를 입력해주세요.');
-    return;
-  }
-  const message = getValueById('message');
-  if (passwd === '') {
-    alert('메세지를 입력해주세요.');
-    return;
-  }
-  await insertData({name, passwd, message});
-  location.reload();
-}
-
-const getDataRecent = async () =>
-  await supabase.from(TABLE_ID).select()
-    .order('created_at', {ascending: false}).limit(MAX_RECENT_COMMENTS);
-
-const getDataAll = async () => await supabase.from(TABLE_ID).select();
-
-const getCount = async () => await supabase.from(TABLE_ID).select('*', {count: 'exact', head: true});
-
-const renderGuestbook = async fetchData => {
-  const guestbook = document.getElementById('guestbook');
-  let idx = 0;
-  for (let {id, created_at, name, message} of (await fetchData()).data) {
-    const date = new Date(created_at).toLocaleString('ko-KR');
-    guestbook.insertAdjacentHTML('beforeend', 
-      `<div class="entry">
-         <div class="row">
-           <span class="name">${name}</span>
-           <span class="date">${date}</span>
-         </div>
-         <div class="message">${message}</div>
-         <span class="delete" id="delete-${idx}">삭제</span>
-       <div>`
-    );
-    document.getElementById(`delete-${idx}`).addEventListener('click', async () => {
-      const input = window.prompt('비밀번호를 입력하세요.');
-      await deleteData(id, input);
-    });
-    idx++;
-  }
+var coll = document.getElementsByName('accounts');
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
 }
