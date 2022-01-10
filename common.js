@@ -44,7 +44,8 @@ const getDataRecent = async () =>
   await supabase.from(TABLE_ID).select()
     .order('created_at', {ascending: false}).limit(MAX_RECENT_COMMENTS);
 
-const getDataAll = async () => await supabase.from(TABLE_ID).select();
+const getDataAll = async () => await supabase.from(TABLE_ID)
+  .select().order('created_at', {ascending: false});
 
 const getCount = async () => await supabase.from(TABLE_ID).select('*', {count: 'exact', head: true});
 
