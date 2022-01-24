@@ -49,6 +49,18 @@ const getDataAll = async () => await supabase.from(TABLE_ID)
 
 const getCount = async () => await supabase.from(TABLE_ID).select('*', {count: 'exact', head: true});
 
+const escapeHtml = str =>
+  String(str).replace(/[&<>"'`=\/]/g, s => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '/': '&#x2F;',
+    '`': '&#x60;',
+    '=': '&#x3D;'
+  }[s]));
+
 const renderGuestbook = async fetchData => {
   const guestbook = document.getElementById('guestbook');
   let idx = 0;
@@ -57,10 +69,10 @@ const renderGuestbook = async fetchData => {
     guestbook.insertAdjacentHTML('beforeend', 
       `<div class="entry">
          <div class="row">
-           <span class="name">${name}</span>
+           <span class="name">${escapeHtml(name)}</span>
            <span class="date">${date}</span>
          </div>
-         <div class="message">${message}</div>
+         <div class="message">${escapeHtml(message)}</div>
          <span class="delete" id="delete-${idx}">삭제</span>
        <div>`
     );
