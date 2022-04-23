@@ -19,27 +19,6 @@ const deleteData = async (id, passwd) => {
   }
 }
 
-const submitForm = async () => {
-  const getValueById = id => document.getElementById(id).value;
-  const name = getValueById('name');
-  if (name === '') {
-    alert('이름을 입력해주세요.');
-    return;
-  }
-  const passwd = getValueById('passwd');
-  if (passwd === '') {
-    alert('비밀번호를 입력해주세요.');
-    return;
-  }
-  const message = getValueById('message');
-  if (passwd === '') {
-    alert('메세지를 입력해주세요.');
-    return;
-  }
-  await insertData({name, passwd, message});
-  location.reload();
-}
-
 const getDataRecent = async () =>
   await supabase.from(TABLE_ID).select()
     .order('created_at', {ascending: false}).limit(MAX_RECENT_COMMENTS);

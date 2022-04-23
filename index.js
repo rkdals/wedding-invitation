@@ -8,9 +8,6 @@ getCount().then(({count}) => {
   }
 });
 renderGuestbook(getDataRecent);
-document.getElementById('submit-form-button').addEventListener('click', () => {
-  submitForm();
-});
 
 var coll = document.getElementsByName('accounts');
 var i;
