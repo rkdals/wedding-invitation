@@ -5,15 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="images/sub.jpg">
     <link rel="icon" type="image/png" href="data:image/png;base64,">
-    <link rel="stylesheet" href="style.css">
     <title>강민 ♥ 백소연 결혼합니다</title>
+    <style>
+      @font-face {
+        font-family: "SunBatang";
+        font-weight: normal;
+        src: url("SunBatang-Light.woff");
+      }
+      html {
+        background-color: #333;
+      }
+      body {
+        background-color: #f5f1ee;
+        font: 14px/32px SunBatang;
+        height: 100%;
+        margin: auto;
+        max-width: 480px;
+        padding-bottom: 24px;
+        text-align: center;
+        width: 100%;
+        word-break: keep-all;
+      }
+      img {
+        height: auto;
+        width: 100%;
+      }
+      .title {
+        color: #bf8362;
+        font-size: 20px;
+        padding: 40px 0 32px;
+      }
+    </style>
   </head>
   <body>
-
-    <div class="title">
-      갤러리
-    </div>
-
+    <div class="title">갤러리</div>
     <img id="image01" src="images/01.jpg" />
     <img id="image011" src="images/011.jpg" />
     <img id="image02" src="images/02.jpg" />
@@ -38,9 +63,5 @@
     <img id="image12" src="images/12.jpg" />
     <img id="image13" src="images/13.jpg" />
     <img id="image14" src="images/14.jpg" />
-
-    <div id="back-button" class="button">뒤로가기</div>
-
   </body>
-  <script src="back-button.js"></script>
 </html>

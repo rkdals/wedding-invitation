@@ -4,27 +4,135 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta property="og:image" content="images/sub.jpg">
-    <meta property="og:description" content="2월 26일 오후 12시"/>
+    <meta property="og:description" content="2월 26일 오후 12시">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" type="image/png" href="data:image/png;base64,">
     <title>강민 ♥ 백소연 결혼합니다</title>
-    <script src="https://unpkg.com/@supabase/supabase-js"></script>
-    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6dd95fdc88f7a7ddde78370842026602"></script>
-    <script src="common.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <style>
+      @font-face {
+        font-family: "SunBatang";
+        font-weight: normal;
+        src: url("SunBatang-Light.woff");
+      }
+      html {
+        background-color: #333;
+      }
+      body {
+        background-color: #f5f1ee;
+        font: 14px/32px SunBatang;
+        height: 100%;
+        margin: auto;
+        max-width: 480px;
+        padding-bottom: 24px;
+        text-align: center;
+        width: 100%;
+        word-break: keep-all;
+      }
+      img {
+        height: auto;
+        width: 100%;
+      }
+      a {
+        text-decoration: none;
+      }
+      .title,
+      .subtitle {
+        color: #bf8362;
+      }
+      .title {
+        font-size: 20px;
+        padding: 40px 0 32px;
+      }
+      .subtitle {
+        font-size: 18px;
+        padding: 48px 0 16px;
+      }
+      .banner,
+      .entry {
+        background-color: #fff;
+        border: 8px solid #fff;
+        box-shadow: 1px 1px 3px rgb(0 0 0 / 7%);
+      }
+      .banner {
+        margin: 0 14px;
+      }
+      .banner-text,
+      .family-members {
+        font-size: 16px;
+      }
+      .banner-text {
+        padding: 20px 0;
+      }
+      .greetings-text,
+      .family-members {
+        margin: 16px 32px 0;
+      }
+      .greetings-text {
+        margin-bottom: 48px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4px;
+        padding: 4px;
+      }
+      .grid a {
+        height: 200px;
+      }
+      .grid img {
+        height: 200px;
+        object-fit: cover;
+      }
+      .family-members .relation {
+        color: #8a857f;
+        font-size: 12px;
+      }
+      .button {
+        background-color: #dab396;
+        color: #fff;
+        cursor: pointer;
+        padding: 4px 20px;
+      }
+      .entry {
+        border-radius: 8px;
+        font-size: 13px;
+        margin: 0 48px 16px;
+        position: relative;
+        text-align: left;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        line-height: 20px;
+        margin-bottom: 8px;
+      }
+      .name {
+        font-size: 15px;
+        text-align: left;
+      }
+      .date {
+        color: #aaa;
+        font-size: 11px;
+      }
+      .message {
+        line-height: 18px;
+      }
+      #guestbook {
+        margin-top: 16px;
+      }
+    </style>
   </head>
   <body>
-
     <div class="title">
-      강민<br/>
-      —<br/>
+      강민<br />
+      —<br />
       백소연
     </div>
 
     <div class="banner">
       <img src="images/main.jpg" />
       <div class="banner-text">
-        2022년 2월 26일 토요일 낮 12시<br/>
+        2022년 2월 26일 토요일 낮 12시<br />
         그랜드 하얏트 서울 그랜드 볼룸
       </div>
     </div>
@@ -32,17 +140,17 @@
     <div class="subtitle">초대합니다</div>
 
     <div class="greetings-text">
-      서로가 있기에 눈 뜨는 아침이 행복했습니다.<br/>
-      이제 그 행복을 곁에서 함께 하려 합니다.<br/>
-      사랑과 믿음으로 하나 되는 자리에<br/>
-      귀한 걸음 하시어 축복해 주시면<br/>
+      서로가 있기에 눈 뜨는 아침이 행복했습니다.<br />
+      이제 그 행복을 곁에서 함께 하려 합니다.<br />
+      사랑과 믿음으로 하나 되는 자리에<br />
+      귀한 걸음 하시어 축복해 주시면<br />
       큰 기쁨으로 간직하겠습니다.
     </div>
 
     <img src="images/sub.jpg" />
 
     <div class="family-members">
-      강성우 · 김경진 <span class="relation">의 아들</span> 민<br/>
+      강성우 · 김경진 <span class="relation">의 아들</span> 민<br />
       백여현 · 현영미 <span class="relation">의 딸</span> 소연
     </div>
 
@@ -50,16 +158,16 @@
 
     <div class="grid">
       <a href="gallery.html#image01">
-	<img src="images/01.jpg" />
+        <img src="images/01.jpg" />
       </a>
       <a href="gallery.html#image02">
-	<img src="images/02.jpg" />
+        <img src="images/02.jpg" />
       </a>
       <a href="gallery.html#image03">
-	<img src="images/03.jpg" />
+        <img src="images/03.jpg" />
       </a>
       <a href="gallery.html#image04">
-	<img src="images/04.jpg" />
+        <img src="images/04.jpg" />
       </a>
       <a href="gallery.html#image05">
         <img src="images/05.jpg" />
@@ -71,7 +179,7 @@
         <img src="images/07.jpg" />
       </a>
       <a href="gallery.html#image08">
-	<img src="images/08.jpg" />
+        <img src="images/08.jpg" />
       </a>
       <a href="gallery.html#image09">
         <img src="images/09.jpg" />
@@ -81,83 +189,110 @@
       <div class="button">자세히 보기</div>
     </a>
 
-    <div class="subtitle">오시는 길</div>
-
-    <div id="map"></div>
-    <a href="https://map.kakao.com/?itemId=18661190">
-      <div class="button">카카오맵 바로가기</div>
-    </a>
-
-    <div class="location-info">
-      <div>
-        <div class="location-subtitle">주소</div>
-        서울특별시 용산구 소월로 322<br/>
-      </div>
-      <div>
-        <div class="location-subtitle">셔틀버스</div>
-        6호선 한강진역 2번 출구에서 탑승<br/>
-        11시부터 12시까지 운행 (15분 간격)
-      </div>
-      <div>
-        <div class="location-subtitle">일반 버스</div>
-        402, 405번 버스 하얏트 호텔 정류장 하차
-      </div>
-      <div>
-        <div class="location-subtitle">자가용</div>
-        호텔 주차장 3시간 무료 이용 가능
-      </div>
-    </div>
-
-    <div class="subtitle">
-      마음 전하실 곳
-    </div>
-
-    <div name="accounts" class="button account-button">
-      신랑측 계좌번호
-    </div>
-    <div class="account-item">
-      <p>
-        신한은행
-        <span class="word">341-04-488365</span>
-        강민
-        <a href="https://qr.kakaopay.com/FC31YBBXc">
-          <img class="kakaopay" src="payment_icon_yellow_large.png" />
-        </a>
-      </p>
-      <p>
-        신한은행
-        <span class="word">110-237-160544</span>
-        강성우
-      </p>
-    </div>
-
-    <div name="accounts" class="button account-button">
-      신부측 계좌번호
-    </div>
-    <div class="account-item">
-      <p>
-        카카오뱅크
-        <span class="word">3333-13-4967406</span>
-        백소연
-        <a href="https://qr.kakaopay.com/Ej8jMwt1V">
-          <img class="kakaopay" src="payment_icon_yellow_large.png" />
-        </a>
-      </p>
-      <p>
-        카카오뱅크
-        <span class="word">3333-01-4021162</span>
-        백여현
-      </p>
-    </div>
-
     <div class="subtitle">방명록</div>
 
-    <div id="guestbook"></div>
-
-    <a href="guestbook.html">
-      <div id="guestbook-button" class="button">더 보기</div>
-    </a>
-
+    <div id="guestbook">
+      <div class="entry">
+        <div class="row">
+          <span class="name">조준희</span>
+          <span class="date">2022. 1. 9. 오후 12:28:59</span>
+        </div>
+        <div class="message">신랑 너무 멋지고 신부 너무 예뻐요 ㅎㅎ 결혼식까지 어떻게 기다리죠? 행복해보이네요! &lt;3</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">오현수</span>
+          <span class="date">2022. 1. 12. 오후 3:39:12</span>
+        </div>
+        <div class="message">두 분 너무정말 축하합니다 멋진 동생이자 코딩 스승 민이 늘 고맙고 언제나 행복하길!</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">박우빈</span>
+          <span class="date">2022. 1. 20. 오후 6:04:45</span>
+        </div>
+        <div class="message">축하드립니다 민님~~! 두분 너무 아름다우십니다 ^^</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">김민수</span>
+          <span class="date">2022. 1. 20. 오후 7:12:31</span>
+        </div>
+        <div class="message">넘 기대되는 결혼식!!!!!😆😆😆</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">김지운</span>
+          <span class="date">2022. 1. 20. 오후 9:39:33</span>
+        </div>
+        <div class="message">결혼 너무 축하드립니다!! 앞길에 꽃길만 가득하고 행복하기를 바랍니다 🌸🎉</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">장태순</span>
+          <span class="date">2022. 1. 23. 오전 11:57:38</span>
+        </div>
+        <div class="message">링크가 github.io네요ㅋㅋ 두 분 너무 잘 어울리시는 것 같고 아름다우십니다. 축하드려요</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">양승혜🤎</span>
+          <span class="date">2022. 2. 10. 오후 6:06:02</span>
+        </div>
+        <div class="message">우리 이쁜 신부 결혼 넘 축하해 구날봐❤️❤️</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">신영</span>
+          <span class="date">2022. 2. 19. 오후 11:11:58</span>
+        </div>
+        <div class="message">사랑스러운 두 짝꿍~함께하는 날들은 더욱 더 빛나길! 늘 지켜볼꺼야💖사랑해 소연🤍</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">모스코 신라 아줌마~</span>
+          <span class="date">2022. 2. 15. 오후 7:59:13</span>
+        </div>
+        <div class="message">
+          민이야~ 아줌마 기억하고있니? 어느새 장성한 청년이 되어 이렇게 예쁜 신부를 만났어? 늘~ 궁금했지! 어떤모습일까 하구~ 역시나 어릴때 부터 남다르고 착하고 잘~생기고 똑똑한 민이었는데~ 아가씨도 예쁘고 참하게 생긴 반려자를 만났네~~ 넘^!!
+          축하해 멋진 선남 &amp;선녀 가 앞으로의 가는길 하나님의 축복과 은혜 가 함께 하기를 기도 드림니다. 결혼식 날 아저씨와 함께 축하해 주러 갈께. 사랑하고 축복해 ~~
+        </div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">예솔</span>
+          <span class="date">2022. 2. 24. 오후 6:28:12</span>
+        </div>
+        <div class="message">언니 결혼 정말 축하해요!! 앞으로 함께할 나날들 꿀 떨어지게 행복하게 사세요!!🍯💕</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">정은</span>
+          <span class="date">2022. 2. 24. 오후 6:30:16</span>
+        </div>
+        <div class="message">드디어 내일이네! 결혼 너무 축하하고 내일 우리 소연이가 최고로 이쁜 신부일거야!!! 사랑한다 친구야 내일 보자! 행복하길 ~!!</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">양석</span>
+          <span class="date">2022. 2. 24. 오후 8:39:20</span>
+        </div>
+        <div class="message">이날 길일인가보네.친지결혼식이 겹쳐 마음을 전하니 이해바라고 다시 한번 축하 합니다.</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">윤형섭</span>
+          <span class="date">2022. 2. 25. 오전 8:55:02</span>
+        </div>
+        <div class="message">성우 형. 아들 민의 결혼을 진심으로 축하드립니다. 젊은 부부네게 행복하고 밝은 날만 있기를 기원합니다!!!</div>
+      </div>
+      <div class="entry">
+        <div class="row">
+          <span class="name">이성민</span>
+          <span class="date">2022. 2. 25. 오전 10:31:41</span>
+        </div>
+        <div class="message">너무너무 축하해요 소연누나 못가서 너무 아쉽…</div>
+      </div>
+    </div>
   </body>
-  <script src="index.js"></script>
 </html>
